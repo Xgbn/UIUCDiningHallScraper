@@ -2,17 +2,15 @@ Pod::Spec.new do |s|
   s.name             = "UIUCDiningHallScraper"
   s.version          = "0.1.0"
   s.summary          = "haha"
-  s.homepage         = ""
-  s.license          = 'MIT'
-  s.author           = { "xiangbin" => "hu.xgbn@gmail.com" }
-  s.source           = {}
+  s.homepage         = "https://xgbn.github.io"
+  s.license          = {type: "MIT", file: "LICENSE"}
+  s.author           = { "Xiangbin Hu" => "hu.xgbn@gmail.com" }
+  s.source           = {git: "https://github.com/Xgbn/UIUCDiningHallScraper.git", tag:"0.1.0"}
 
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
-  s.preserve_path = 'Modules/*'
   s.source_files  = ['Sources/**/*.swift', 'Sources/**/*.h']
-  s.xcconfig      = {
-                      'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2',
-                      'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/Kanna/Modules'
-                    }
+
+  s.dependency 'Kanna', '~> 2.1.0'
+  s.dependency 'Alamofire', '~> 4.4'
 end

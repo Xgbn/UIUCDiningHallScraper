@@ -74,7 +74,7 @@ public class Scraper {
                     body.xpath("//div[@class='MealPeriodMenu']").forEach({ body in
                         var mealPeriodMenu = [String:NSObject]()
                         mealPeriodMenu["DiningServiceUnit"] = diningserviceunit! as NSObject
-                        mealPeriodMenu["DiningMealPeriod"] = body.at_xpath(".//h4")?.text! as! NSObject
+                        mealPeriodMenu["DiningMealPeriod"] = body.at_xpath(".//h4")?.text! as NSObject?
                         
                         var food = [String:NSObject]()
                         var foodContent = [[String]]()
