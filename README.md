@@ -2,6 +2,36 @@
 
 A scraper to scrape the dining hall menus in UIUC
 
+## Install
+
+### CocoaPod
+```
+pod 'UIUCDiningHallScraper', :git => "https://github.com/Xgbn/UIUCDiningHallScraper.git"
+```
+
+#### Note - libxml2
+You need to add $(SDKROOT)/usr/include/libxml2 to Header Search Paths for the package to work
+
+#### Note - security
+IOS requires the following information to be added to Info.plist
+```
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>illinois.edu</key>
+        <dict>
+            <key>NSExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+        </dict>
+    </dict>
+</dict>
+
+```
+
+
 ## Usage
 
 ```swift
